@@ -11,3 +11,5 @@ gem 'jquery-rails'
 gem 'jbuilder', '~> 1.2'
 gem 'slim'
 gem 'simple_form'
+
+gem 'annotate'
