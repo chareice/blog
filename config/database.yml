@@ -49,7 +49,7 @@ test:
   database: blog_test
   pool: 5
   username: blog
-  password:
+  password: pass
 
 production:
   adapter: postgresql
