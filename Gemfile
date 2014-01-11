@@ -13,3 +13,4 @@ gem 'slim'
 gem 'simple_form'
 
 gem 'annotate'
+gem 'bcrypt-ruby', '~> 3.1.2'
