@@ -1,6 +1,7 @@
 class Admin::PostsController < Admin::BaseController
     def index
         @posts = Post.all
+        render :index
     end
 
     def create
@@ -19,10 +20,11 @@ class Admin::PostsController < Admin::BaseController
     end
 
     def edit
+        @post = Post.find params[:id]
     end
 
     def show
-
+        @post = Post.find params[:id]
     end
     
     private
