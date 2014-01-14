@@ -26,7 +26,7 @@ describe Admin::PostsController do
     describe 'GET #new' do
         it "assigns a new Post to @post" do
             get :new
-            expect(assigns(:post)).to eq Post.new
+            expect(assigns(:post).attributes).to eq Post.new.attributes
         end
 
         it "renders the :new view" do 
@@ -38,7 +38,7 @@ describe Admin::PostsController do
     describe 'GET #edit' do
         before :each do
             @post = create(:post)
-            get :edit, id: post
+            get :edit, id: @post
         end
         it "assigns the requested post to @post" do
             expect(assigns(:post)).to eq @post

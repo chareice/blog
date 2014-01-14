@@ -1,5 +1,5 @@
 class Admin::BaseController < ActionController::Base
-    before_filter :authenticate_admin!
+    #before_action :authenticate_admin!
 
     private
     def authenticate_admin!
