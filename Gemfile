@@ -12,7 +12,6 @@ gem 'jbuilder', '~> 1.2'
 gem 'slim', '~> 2.0.2'
 gem 'simple_form', '~> 3.0.1'
 
-gem 'annotate', '~> 2.6.1'
 gem 'bcrypt-ruby', '~> 3.1.2'
 
 group :development, :test do

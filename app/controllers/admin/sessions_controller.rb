@@ -1,9 +1,12 @@
 class Admin::SessionsController < ApplicationController
-    def new
+  def new
+  end
 
-    end
+  def create
+    
+  end
 
-    def create
-        
-    end
+  def destroy
+    
+  end
 end

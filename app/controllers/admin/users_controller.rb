@@ -8,7 +8,9 @@ class Admin::UsersController < ApplicationController
     def create
      user = User.new user_params
      if user.save
-         redirect_to admin_posts_path
+        redirect_to admin_posts_path
+     else
+        redirect_to action: :new
      end
     end
     
@@ -20,6 +22,6 @@ class Admin::UsersController < ApplicationController
     end
 
     def user_params
-     params.require(:user).permit(:name, :email, :password)
+        params.require(:user).permit(:name, :email, :password)
     end 
 end

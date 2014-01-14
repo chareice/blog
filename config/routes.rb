@@ -7,4 +7,8 @@ Blog::Application.routes.draw do
     resource :session
     resource :user
   end
+
+  get "/login", to: "admin/sessions#new", as: "admin_login"
+  post "/login", to: "admin/sessions#create"
+  get "/logout", to: "admin/sessions#destroy"
 end
