@@ -64,6 +64,25 @@ describe Admin::PostsController do
                     }.to change(Post, :count).by(1)
                 end
             end
+
+            context 'with valida post with tags' do
+                it "save the new post" do
+                    a_post = build(:post)
+                    tags = %w{心情 天气 日记}.map do |tag_name|
+                        build(:tag, name: tag_name).attributes
+                    end
+                    p_data = a_post.attributes
+                    p_data[:tags] = tags
+
+                    sub = expect{
+                       post :create, post: p_data
+                    }
+                    
+                    sub.to change(Post, :count).from(0).to(1)
+                    sub.to change(Tag, :count).from(0).to(3)
+                    expect(response).to redirect_to admin_post_path(Post.last.id)
+                end
+            end
         end
     end
 end
