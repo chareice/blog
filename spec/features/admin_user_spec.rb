@@ -28,4 +28,9 @@ feature 'Admin User' do
         visit admin_root_path
         expect(page.current_path).to eq admin_login_path
     end
+
+    scenario "redirect to root path when user login" do
+        log_in(create(:user))
+        expect(page.current_path).to eq admin_root_path
+    end
 end
