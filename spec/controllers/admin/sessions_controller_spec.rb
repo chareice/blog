@@ -42,7 +42,7 @@ describe Admin::SessionsController do
         user = create(:user)
       }
       it "redirect_to admin_login_path" do
-        post :create, email: user.email, password: "not for user"
+        post :create, email: subject.email, password: "not for user"
         expect(response).to redirect_to admin_login_path
       end
     end

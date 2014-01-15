@@ -1,4 +1,5 @@
 class Admin::UsersController < ApplicationController
+    include Admin::SessionsHelper
     before_action :user_not_exists
     
     def new
@@ -8,6 +9,7 @@ class Admin::UsersController < ApplicationController
     def create
      user = User.new user_params
      if user.save
+        login(user)
         redirect_to admin_posts_path
      else
         redirect_to action: :new

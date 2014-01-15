@@ -1,15 +1,24 @@
 require 'spec_helper'
 
-# Specs in this file have access to a helper object that includes
-# the Admin::SessionsHelper. For example:
-#
-# describe Admin::SessionsHelper do
-#   describe "string concat" do
-#     it "concats two strings with spaces" do
-#       expect(helper.concat_strings("this","that")).to eq("this that")
-#     end
-#   end
-# end
 describe Admin::SessionsHelper do
-  pending "add some examples to (or delete) #{__FILE__}"
+    describe "#current_user" do
+        it "return nil when session[:user_id] is nil" do
+            session[:user_id] = nil
+            expect(helper.current_user).to eq nil
+        end
+
+        it "return user object when session[:user_id] has a id for user" do
+            user = create(:user)
+            session[:user_id] = user.id
+            expect(helper.current_user).to eq user
+        end
+    end
+
+    describe "#login" do
+        it "set user id to session" do
+            user = create(:user)
+            helper.login(user)
+            expect(session[:user_id]).to eq user.id
+        end
+    end
 end
