@@ -66,21 +66,29 @@ describe Admin::PostsController do
             end
 
             context 'with valida post with tags' do
-                it "save the new post" do
+                it "save the new post with three tags" do
                     a_post = build(:post)
                     tags = %w{心情 天气 日记}.map do |tag_name|
                         build(:tag, name: tag_name).attributes
                     end
                     p_data = a_post.attributes
                     p_data[:tags] = tags
-
-                    sub = expect{
-                       post :create, post: p_data
-                    }
-                    
-                    sub.to change(Post, :count).from(0).to(1)
-                    sub.to change(Tag, :count).from(0).to(3)
+                    post :create, post: p_data
                     expect(response).to redirect_to admin_post_path(Post.last.id)
+                    a_post = Post.last
+                    expect(a_post.tags.count).to eq 3
+
+                    o_post = build(:post, title: "other post")
+                    tags = %w{心情 天气 气象台}.map do |tag_name|
+                        build(:tag, name: tag_name).attributes
+                    end
+                    p_data = o_post.attributes
+                    p_data[:tags] = tags
+                    post :create, post: p_data
+                    expect(response).to redirect_to admin_post_path(Post.last.id)
+                    a_post = Post.last
+                    expect(a_post.tags.count).to eq 3
+                    expect(Tag.all.count).to eq 4
                 end
             end
         end

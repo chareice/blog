@@ -5,9 +5,13 @@ class Admin::PostsController < Admin::BaseController
 
     def create
         post = Post.new post_params
-
+        if tags_params
+            tags_params.each do |tag_params|
+                post.tags << Tag.find_or_create_by(name: tag_params[:name])
+            end
+        end
         if post.save
-            redirect_to admin_posts_path
+            redirect_to admin_post_path(post)
         end
     end
 
@@ -29,5 +33,8 @@ class Admin::PostsController < Admin::BaseController
     private
     def post_params
         params.require(:post).permit(:title, :content)
+    end
+    def tags_params
+        params[:post][:tags]
     end
 end
