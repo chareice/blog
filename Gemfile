@@ -13,7 +13,7 @@ gem 'slim', '~> 2.0.2'
 gem 'simple_form', '~> 3.0.1'
 
 gem 'bcrypt-ruby', '~> 3.1.2'
-
+gem 'compass-rails'
 group :development, :test do
   gem "rspec-rails", '~> 2.14.1'
   gem "factory_girl_rails", '~> 4.3.0'

@@ -2,6 +2,7 @@ class Admin::BaseController < ActionController::Base
     before_action :authenticate_admin!
     include Admin::SessionsHelper
 
+    layout "admin_base"
     private
     def authenticate_admin!
         if User.count == 0
