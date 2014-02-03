@@ -1,3 +1,50 @@
-// Place all the styles related to the admin/posts controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.content-list{
+    box-sizing: border-box;
+    width: 35%;
+    padding: 15px;
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    border-right: #edece4 2px solid;
+    background: #fff;
+    box-shadow: rgba(0,0,0,0.05) 0 1px 5px;
+    .content-list-content{
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        overflow: auto;
+        padding-top: 40px;
+    }
+    ol{
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        border-top: #edece4 1px solid;
+        li{
+            margin: 0;
+            padding: 0;
+            border-bottom: #edece4 1px solid;
+            position: relative;
+            a{
+                display: block;
+                padding: 20px 15px;
+                color: #aaa9a2;
+                .entry-title{
+                    font-size: 1.4em;
+                    line-height: 1.1em;
+                    margin-bottom: 0.5em;
+                    font-weight: bold;
+                }
+                .entry-meta{
+                    color: #242628;
+                    .status{
+
+                    }
+                }
+            }
+        }
+    }
+}

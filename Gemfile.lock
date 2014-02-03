@@ -76,6 +76,8 @@ GEM
     json (1.8.1)
     launchy (2.4.2)
       addressable (~> 2.3)
+    local_time (0.2.0)
+      coffee-rails
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
@@ -172,6 +174,7 @@ DEPENDENCIES
   jbuilder (~> 1.2)
   jquery-rails (~> 3.0.4)
   launchy (~> 2.4.2)
+  local_time
   pg (~> 0.17.1)
   rails (= 4.0.2)
   rspec-rails (~> 2.14.1)

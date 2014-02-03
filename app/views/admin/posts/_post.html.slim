@@ -1,0 +1,8 @@
+li
+  a
+    h3.entry-title
+      = post.title
+    section.entry-meta
+      span.status
+        | Published At #{local_time_ago post.created_at}
+  

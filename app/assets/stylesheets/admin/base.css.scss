@@ -1,1 +1,28 @@
 @import "compass/reset";
+
+body {
+    width: 100%;
+    color: #242628;
+    font-weight: 300;
+    background: #edece4;
+}
+#global-header{
+    height: 40px;
+    width: 100%;
+    font-size: 0.85em;
+    background: #242628;
+}
+
+.main-section-container{
+    position: absolute;
+    top: 55px;
+    right: 15px;
+    bottom: 0;
+    left: 15px;
+    padding: 0;
+}
+.main-section{
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
