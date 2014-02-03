@@ -28,6 +28,12 @@ class Admin::PostsController < Admin::BaseController
 
     def show
         @post = Post.find params[:id]
+        respond_to do |format|
+            format.html
+            format.json {
+                render json: @post.to_json
+            }
+        end
     end
     
     private

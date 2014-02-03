@@ -18,15 +18,22 @@ describe Admin::PostsController do
         describe 'GET #show' do
             before :each do
                 @post = create(:post)
-                get :show, id: @post
             end
             
             it "assigns the requested post to @post" do
+                get :show, id: @post
                 expect(assigns(:post)).to eq @post
             end
     
             it "renders the :show view" do
+                get :show, id: @post
                 expect(response).to render_template :show
+            end
+
+            it "response to json format" do
+                get :show, id: @post, format: :json
+                expect(response).not_to render_template :show
+                expect(response.body).to eq @post.to_json
             end
         end
     
