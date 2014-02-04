@@ -1,12 +1,13 @@
 doctype html
-html
+html ng-app="calindaDashboard"
   head
-      title Blog Admin
-      = stylesheet_link_tag "admin/base"
-      = stylesheet_link_tag controller_path
-  body
-      = render 'admin/dashboard/alert'
-      = render 'admin/dashboard/global_header'
-      section.main-section-container
-        .main-section
-          == yield
+    title Blog Admin
+    = stylesheet_link_tag "admin/base"
+    = stylesheet_link_tag controller_path
+    = javascript_include_tag "admin/base"
+  body ng-controller="DashboardCtrl"
+    = render 'admin/dashboard/alert'
+    = render 'admin/dashboard/global_header'
+    section.main-section-container
+      .main-section
+        = yield

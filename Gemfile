@@ -15,6 +15,7 @@ gem 'simple_form', '~> 3.0.1'
 gem 'bcrypt-ruby', '~> 3.1.2'
 gem 'compass-rails'
 gem 'local_time'
+gem 'angularjs-rails'
 
 group :development, :test do
   gem "rspec-rails", '~> 2.14.1'
