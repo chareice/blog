@@ -1,6 +1,12 @@
 class Admin::PostsController < Admin::BaseController
     def index
         @posts = Post.all
+        respond_to do |format|
+            format.html
+            format.json {
+                render json: @posts.to_json
+            }
+        end
     end
 
     def create
