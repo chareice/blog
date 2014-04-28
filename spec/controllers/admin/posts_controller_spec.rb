@@ -13,6 +13,11 @@ describe Admin::PostsController do
                 get :index
                 expect(response).to render_template :index
             end
+
+            it "renders json response" do
+                get :index, format: :json
+                expect(response).not_to render_template :index
+            end
         end
     
         describe 'GET #show' do

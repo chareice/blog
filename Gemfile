@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '2.1.0'
+ruby '2.1.1'
 
 gem 'rails', '4.1.0'
 gem 'pg', '~> 0.17.1'
@@ -10,7 +10,7 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails', '~> 3.0.4'
 gem 'jbuilder', '~> 1.2'
 gem 'slim', '~> 2.0.2'
-gem 'simple_form'
+gem 'simple_form', :git => 'git://github.com/plataformatec/simple_form.git'
 
 gem 'bcrypt-ruby', '~> 3.1.2'
 gem 'compass-rails'
