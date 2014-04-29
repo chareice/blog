@@ -1,8 +1,7 @@
-li
-  div ng-click="showContent()" data-url=admin_post_path(post, format: :json)
+li ng-repeat="post in posts"
+  div ng-click="showContent(post.id)" data-id="{{ post.id }}"
     h3.entry-title
-      = post.title
+      | {{ post.title }}
     section.entry-meta
       span.status
-        | Published At #{local_time_ago post.created_at}
-  
+        | Published At {{ post.created_at }}
