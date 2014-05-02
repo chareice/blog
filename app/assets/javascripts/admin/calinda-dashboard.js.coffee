@@ -7,5 +7,6 @@ calindaDashboard.controller 'DashboardCtrl' , ['$scope', '$http', ($scope,$http)
     $scope.posts = data
   
   $scope.showContent = (id) ->
-    console.log id
+    $http.get("admin/posts/#{id}.json").then (data) ->
+      $scope.postContent = data.data
 ]

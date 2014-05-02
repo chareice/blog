@@ -5,9 +5,9 @@ Blog::Application.routes.draw do
   
   namespace :admin do
     root 'posts#index'
-    resources :posts
-    resource :session
+    resources :posts        
     resource :user
+    resource :session, only: [:new, :create, :destroy]
   end
 
   scope controller: "admin/sessions" do
@@ -15,5 +15,5 @@ Blog::Application.routes.draw do
     post "/login", to: :create
     get "/logout", to: :destroy
   end
-
+  
 end
