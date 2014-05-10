@@ -1,4 +1,10 @@
-source 'https://rubygems.org'
+if ENV["TAOBAO"]
+  source 'http://ruby.taobao.org'
+else
+  source 'https://rubygems.org'
+end
+
+source 'https://rails-assets.org'
 
 ruby '2.1.1'
 
@@ -15,7 +21,10 @@ gem 'simple_form', :git => 'git://github.com/plataformatec/simple_form.git'
 gem 'bcrypt-ruby', '~> 3.1.2'
 gem 'compass-rails'
 gem 'local_time'
-gem 'angularjs-rails'
+
+gem 'rails-assets-angular'
+gem 'rails-assets-sugar'
+gem 'rails-assets-marked'
 
 group :development, :test do
   gem "rspec-rails", '~> 2.14.1'

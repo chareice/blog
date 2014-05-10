@@ -1,8 +1,7 @@
 ol
-  li data-ng-repeat="post in posts"
-    div data-ng-click="showContent(post.id)" data-id="{{ post.id }}"
-      h3.entry-title
-        | {{ post.title }}
+  li ng-repeat="post in posts"
+    div ng-click="showContent(post.id)" data-id="{{ post.id }}"
+      h3.entry-title ng-bind="post.title"
       section.entry-meta
         span.status
           | Published At {{ post.created_at }}
